@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Damian Etienne Ernesta - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -82,6 +82,36 @@
             color: white;
             padding: 120px 0 80px;
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .hero h1 {
@@ -89,32 +119,52 @@
             font-weight: 800;
             margin-bottom: 1rem;
             opacity: 0;
-            animation: fadeInUp 1s ease forwards;
+            animation: fadeInUp 1s ease 0.2s forwards;
         }
 
         .hero p {
             font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.2s forwards;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: var(--primary-color);
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 3rem;
             opacity: 0;
             animation: fadeInUp 1s ease 0.4s forwards;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-button:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-button.primary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid white;
+        }
+
+        .hero-button.primary:hover {
+            background: rgba(255, 255, 255, 0.9);
         }
 
         /* Sections */
@@ -136,71 +186,39 @@
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .profile-image {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
+            max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
-        .about-text {
+        .about-summary {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-light);
+            margin-bottom: 3rem;
         }
 
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .skill-icon {
-            width: 60px;
-            height: 60px;
+        .cv-download {
+            display: inline-block;
             background: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
             color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-download:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
         }
 
         /* Projects Section */
-        .projects {
-            background: var(--bg-secondary);
-        }
-
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -218,21 +236,34 @@
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .project-image {
+        .project-header {
             height: 200px;
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2rem;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .project-type {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .project-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .project-title {
@@ -243,7 +274,24 @@
 
         .project-description {
             color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-secondary);
+            color: var(--text-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .project-links {
@@ -252,12 +300,15 @@
         }
 
         .project-link {
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 6px;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .project-link.primary {
@@ -273,6 +324,65 @@
         .project-link:hover {
             transform: translateY(-1px);
         }
+
+        /* SWOT Analysis Section */
+        .swot {
+            background: var(--bg-secondary);
+        }
+
+        .swot-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .swot-image {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+        }
+
+        .swot-summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .swot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .swot-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .swot-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .swot-item.strengths { border-left: 4px solid #10b981; }
+        .swot-item.weaknesses { border-left: 4px solid #f59e0b; }
+        .swot-item.opportunities { border-left: 4px solid #3b82f6; }
+        .swot-item.threats { border-left: 4px solid #ef4444; }
 
         /* Contact Section */
         .contact {
@@ -334,9 +444,18 @@
                 font-size: 2.5rem;
             }
 
-            .about-content {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .swot-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
 
             .contact-links {
@@ -344,7 +463,7 @@
                 align-items: center;
             }
 
-            .projects-grid {
+            .swot-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -358,12 +477,12 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Your Name</div>
+            <div class="logo">Damian Etienne Ernesta</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#swot">SWOT Analysis</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -371,9 +490,19 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <h1>Hi, I'm Your Name</h1>
-            <p>Full Stack Developer & Creative Problem Solver</p>
-            <a href="#about" class="cta-button">Learn More About Me</a>
+            <div class="hero-content">
+                <div class="profile-photo">
+                    <img src="face.jpg" alt="Damian Etienne Ernesta">
+                </div>
+                <h1>Damian Etienne Ernesta</h1>
+                <p>Computer Science Student & Future Software Developer</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="hero-button primary">About Me</a>
+                    <a href="#projects" class="hero-button">Projects</a>
+                    <a href="#swot" class="hero-button">SWOT Analysis</a>
+                    <a href="#contact" class="hero-button">Contact</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -381,84 +510,125 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="profile-image">👨‍💻</div>
-                <div class="about-text">
-                    <p>I'm a passionate developer with experience in creating innovative digital solutions. My journey in technology began with curiosity and has evolved into a commitment to building impactful applications that solve real-world problems.</p>
+                <div class="about-summary">
+                    <p>Hello! I'm Damian Etienne Ernesta, a passionate Computer Science student with a strong interest in software development and technology innovation. Throughout my academic journey, I have developed a solid foundation in programming, problem-solving, and collaborative project development.</p>
                     <br>
-                    <p>I specialize in modern web technologies and enjoy working on projects that challenge me to grow both technically and creatively. When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.</p>
+                    <p>I am dedicated to continuous learning and staying updated with the latest technological trends. My goal is to contribute to meaningful projects that make a positive impact while building a successful career in software development. I enjoy working in team environments and am always eager to take on new challenges that help me grow both professionally and personally.</p>
+                    <br>
+                    <p>When I'm not coding or studying, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with fellow developers and students.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>Frontend Development</h3>
-                    <p>React, Vue.js, JavaScript, HTML5, CSS3, Tailwind CSS</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend Development</h3>
-                    <p>Node.js, Python, Express.js, Django, REST APIs</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🗄️</div>
-                    <h3>Database & Cloud</h3>
-                    <p>MongoDB, PostgreSQL, AWS, Docker, Git</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">📱</div>
-                    <h3>Mobile Development</h3>
-                    <p>React Native, Flutter, iOS, Android</p>
-                </div>
+                <a href="#" class="cv-download" onclick="downloadCV()">
+                    📄 Download My CV
+                </a>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">📱</div>
+                    <div class="project-header">
+                        🏢
+                        <div class="project-type">Internship</div>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <h3 class="project-title">Software Development Internship</h3>
                         <p class="project-description">
-                            A full-stack e-commerce solution built with React and Node.js, featuring user authentication, payment processing, and inventory management.
+                            During my internship at [Company Name], I worked on developing and maintaining web applications using modern technologies. I collaborated with senior developers to implement new features and optimize existing code for better performance.
                         </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">Live Demo</a>
-                            <a href="#" class="project-link secondary">View Code</a>
+                            <a href="#" class="project-link primary">🔗 View Details</a>
+                            <a href="#" class="project-link secondary">📄 Report</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image">🎨</div>
+                    <div class="project-header">
+                        👥
+                        <div class="project-type">Group Project</div>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">Portfolio Website</h3>
+                        <h3 class="project-title">Collaborative Team Application</h3>
                         <p class="project-description">
-                            A responsive portfolio website showcasing creative projects with modern design principles and smooth animations.
+                            A group project developed with my classmates focusing on creating a collaborative platform for students. We implemented features for file sharing, real-time messaging, and project management using agile development methodologies.
                         </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">Live Demo</a>
-                            <a href="#" class="project-link secondary">View Code</a>
+                            <a href="#" class="project-link primary">🚀 Live Demo</a>
+                            <a href="#" class="project-link secondary">💻 Source Code</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image">🚀</div>
+                    <div class="project-header">
+                        🎓
+                        <div class="project-type">Final Year</div>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">Task Management App</h3>
+                        <h3 class="project-title">Final Year Capstone Project</h3>
                         <p class="project-description">
-                            A productivity app with real-time collaboration features, built using Vue.js and Firebase for seamless team coordination.
+                            My capstone project focuses on [Project Topic], addressing real-world problems through innovative software solutions. This project demonstrates my ability to research, design, and implement a complete system from conception to deployment.
                         </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">Live Demo</a>
-                            <a href="#" class="project-link secondary">View Code</a>
+                            <a href="#" class="project-link primary">📊 Presentation</a>
+                            <a href="#" class="project-link secondary">📋 Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="swot" class="swot">
+        <div class="container">
+            <h2 class="section-title">SWOT Analysis</h2>
+            <div class="swot-content">
+                <div class="swot-image">
+                    📊
+                </div>
+                <div class="swot-text">
+                    <div class="swot-summary">
+                        <p>Through careful self-reflection and feedback from mentors and peers, I have conducted a comprehensive SWOT analysis to better understand my professional profile. This analysis helps me identify areas where I excel and areas where I can continue to grow and improve.</p>
+                        <p>Understanding my strengths allows me to leverage them effectively in projects and teamwork. Recognizing my weaknesses helps me focus on continuous improvement and skill development.</p>
+                    </div>
+                    <div class="swot-grid">
+                        <div class="swot-item strengths">
+                            <h4>Strengths</h4>
+                            <p>Strong problem-solving skills, quick learner, team collaboration, attention to detail, passion for technology</p>
+                        </div>
+                        <div class="swot-item weaknesses">
+                            <h4>Weaknesses</h4>
+                            <p>Limited industry experience, need to improve public speaking, time management in complex projects</p>
+                        </div>
+                        <div class="swot-item opportunities">
+                            <h4>Opportunities</h4>
+                            <p>Growing tech industry, emerging technologies like AI/ML, networking opportunities, internship programs</p>
+                        </div>
+                        <div class="swot-item threats">
+                            <h4>Threats</h4>
+                            <p>Rapidly changing technology landscape, competitive job market, need for continuous skill updates</p>
                         </div>
                     </div>
                 </div>
@@ -469,15 +639,15 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
-            <p>I'm always open to discussing new opportunities and interesting projects.</p>
+            <p>I'm always open to discussing new opportunities, collaborations, and interesting projects.</p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">
+                <a href="mailto:damian.ernesta@example.com" class="contact-link">
                     📧 Email Me
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-link">
+                <a href="https://linkedin.com/in/damian-ernesta" class="contact-link">
                     💼 LinkedIn
                 </a>
-                <a href="https://github.com/yourusername" class="contact-link">
+                <a href="https://github.com/damian-ernesta" class="contact-link">
                     🐙 GitHub
                 </a>
             </div>
@@ -486,7 +656,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name. Built with ❤️ and lots of ☕</p>
+            <p>&copy; 2025 Damian Etienne Ernesta. Built with passion and dedication ❤️</p>
         </div>
     </footer>
 
@@ -528,13 +698,20 @@
             });
         }, observerOptions);
 
-        // Observe skill cards and project cards
-        document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+        // Observe project cards and SWOT items
+        document.querySelectorAll('.project-card, .swot-item').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
+
+        // CV Download function
+        function downloadCV() {
+            alert('CV download functionality needs to be implemented. You can:\n1. Upload your CV file to the repository\n2. Link to it directly\n3. Use a third-party service like Google Drive');
+            // Replace this with actual CV download link
+            // window.open('path/to/your/cv.pdf', '_blank');
+        }
     </script>
 </body>
 </html>
