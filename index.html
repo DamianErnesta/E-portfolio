@@ -196,6 +196,21 @@
             line-height: 1.8;
             color: var(--text-light);
             margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .mission-statement {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .mission-statement h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
         }
 
         .cv-download {
@@ -334,55 +349,47 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 4rem;
-            align-items: center;
-            max-width: 1000px;
+            align-items: start;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .swot-image-container {
+            text-align: center;
         }
 
         .swot-image {
             width: 100%;
-            max-width: 400px;
-            height: 300px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            max-width: 450px;
+            height: auto;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
             margin: 0 auto;
         }
 
-        .swot-summary {
+        .swot-text {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text-light);
         }
 
-        .swot-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .swot-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .swot-description {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             margin-top: 2rem;
         }
 
-        .swot-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .swot-item h4 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .swot-description h3 {
             color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
         }
-
-        .swot-item.strengths { border-left: 4px solid #10b981; }
-        .swot-item.weaknesses { border-left: 4px solid #f59e0b; }
-        .swot-item.opportunities { border-left: 4px solid #3b82f6; }
-        .swot-item.threats { border-left: 4px solid #ef4444; }
 
         /* Contact Section */
         .contact {
@@ -463,8 +470,8 @@
                 align-items: center;
             }
 
-            .swot-grid {
-                grid-template-columns: 1fr;
+            .about-summary {
+                text-align: center;
             }
         }
 
@@ -495,7 +502,7 @@
                     <img src="face.jpg" alt="Damian Etienne Ernesta">
                 </div>
                 <h1>Damian Etienne Ernesta</h1>
-                <p>Electrical and Electronic Engineering Student</p>
+                <p>Electrical and Electronic Engineering Student at Asia Pacific University</p>
                 <div class="hero-buttons">
                     <a href="#about" class="hero-button primary">About Me</a>
                     <a href="#projects" class="hero-button">Projects</a>
@@ -510,12 +517,20 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
+                <div class="mission-statement">
+                    <h3>Mission Statement</h3>
+                    <p>My dream is to be an electrical engineer capable of dealing with the new concepts, serving honestly, and using sustainable practices to solve the difficult engineering problems. It is my desire to actually contribute in the society through constant learning and personal development as an individual and as a professional.</p>
+                </div>
                 <div class="about-summary">
-                    <p>I am 23 years old this year and in my final year of my Electrical and Electronic Engineering Degree at Asia Pacific University of Technology and Innovation (APU). I am on my last semester now, eager to learn more about power systems, optimization algorithms and embedded system design. My goal is to be a well-trained, reliable engineer who can apply engineering sciences to making ultimate solutions for real-life engineering problems.</p>
-                    <br>
-                    <p><strong>Final Year Project:</strong> Optimal Capacitor Placement and Sizing in a Radial Distribution System using Zebra Optimization Algorithm (ZOA) with power loss minimization and voltage profile improvement. Additionally, my contribution to a team design project using Raspberry Pi, sensors, and computer vision techniques was a pair of AI smart glasses that help visually impaired people navigate and detect objects in their surroundings.</p>
-                    <br>
-                    <p>Previously, I did a four-month internship at Public Utilities Corporation (PUC) in Seychelles, where I was exposed to several sectors such as distribution, underground cable systems and renewable energies. It collectively strengthened my understanding of real world engineering standards and deepened my sense of ongoing self improvement and innovation.</p>
+                    <p>I'm Damian Etienne Ernesta, a fourth year Electrical and Electronics Engineering student at Asia Pacific University. Through the work that I did, it has included working in real life technical projects, innovation through projects, and a high level of exposure to real engineering.</p>
+                    
+                    <p>In my Final Year Project, I was looking at the optimal placement and sizing of capacitors within a radial distribution system using the Zebra Optimization Algorithm (ZOA) where I coded and tested the algorithm in MATLAB, as well as compared it with other methods to minimize power loss and optimize the system.</p>
+                    
+                    <p>With this, I also participated in a group project where we develop a AI based smart glasses to help visually impaired people where we used a Raspberry Pi 5, AI camera, ultrasonic sensors, and GPS modules to enable real time navigation giving feedbacks on obstacles and voice assistance.</p>
+                    
+                    <p>My engineering internship was in the Public Utilities Corporation (PUC) in Seychelles where I got the opportunity to rotate through various departments such as the Inspectorate, Planning, Distribution, Power Station Operation & Maintenance, Underground Cabling Projects, Wind Turbines, and Ile de Romainville Solar Farm. This provided me with an important experience in working in the field of electrical systems, maintenance procedures, and sustainable energy operations.</p>
+                    
+                    <p>Now I have interest in power system analysis, Python and embedded systems like ESP32 and Raspberry Pi. I am also enhancing my technical skills and problem solving abilities all the time. After graduation, I would like to work professionally as an Electrical and Electronics Engineer to help in the design of efficient, intelligent and sustainable systems and their maintenance.</p>
                 </div>
                 <a href="javascript:void(0)" class="cv-download" onclick="forceDownloadCV()">
                     📄 Download My CV
@@ -530,23 +545,24 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        ⚡
-                        <div class="project-type">Internship</div>
+                        🔋
+                        <div class="project-type">Final Year</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Public Utilities Corporation (PUC) Internship</h3>
+                        <h3 class="project-title">Optimal Capacitor Placement and Sizing using Zebra Optimization Algorithm (ZOA)</h3>
                         <p class="project-description">
-                            Completed a four-month internship at Public Utilities Corporation (PUC) in Seychelles, gaining hands-on experience in power generation, distribution systems, underground cable networks, and renewable energy projects. This experience strengthened my understanding of real-world engineering standards and industry practices.
+                            My final year project focuses on implementing the Zebra Optimization Algorithm (ZOA) for optimal capacitor placement and sizing in radial distribution systems. I coded and tested the algorithm in MATLAB, comparing it with other methods to minimize power loss and optimize the system voltage profile.
                         </p>
                         <div class="project-technologies">
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">Zebra Optimization Algorithm</span>
                             <span class="tech-tag">Power Systems</span>
                             <span class="tech-tag">Distribution Networks</span>
-                            <span class="tech-tag">Renewable Energy</span>
-                            <span class="tech-tag">Underground Cabling</span>
+                            <span class="tech-tag">Optimization</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">🔗 View Details</a>
-                            <a href="#" class="project-link secondary">📄 Report</a>
+                            <a href="#" class="project-link primary">📊 View Results</a>
+                            <a href="#" class="project-link secondary">📋 Documentation</a>
                         </div>
                     </div>
                 </div>
@@ -557,16 +573,17 @@
                         <div class="project-type">Group Project</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Smart Glasses for the Visually Impaired</h3>
+                        <h3 class="project-title">AI-Based Smart Glasses for Visually Impaired People</h3>
                         <p class="project-description">
-                            Developed AI-powered smart glasses to assist visually impaired individuals in navigation and object detection. The project utilized Raspberry Pi, various sensors, and computer vision techniques to create a wearable assistive technology solution.
+                            Developed AI-powered smart glasses to assist visually impaired individuals using Raspberry Pi 5, AI camera, ultrasonic sensors, and GPS modules to enable real-time navigation with feedback on obstacles and voice assistance for enhanced mobility and independence.
                         </p>
                         <div class="project-technologies">
-                            <span class="tech-tag">Raspberry Pi</span>
+                            <span class="tech-tag">Raspberry Pi 5</span>
+                            <span class="tech-tag">AI Camera</span>
+                            <span class="tech-tag">Ultrasonic Sensors</span>
+                            <span class="tech-tag">GPS Modules</span>
+                            <span class="tech-tag">Voice Assistance</span>
                             <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">AI/ML</span>
-                            <span class="tech-tag">Embedded Systems</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link primary">🚀 Live Demo</a>
@@ -577,24 +594,25 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        🔋
-                        <div class="project-type">Final Year</div>
+                        ⚡
+                        <div class="project-type">Internship</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Optimal Capacitor Placement and Sizing in Distribution System using ZOA</h3>
+                        <h3 class="project-title">Public Utilities Corporation (PUC) Engineering Internship</h3>
                         <p class="project-description">
-                            My final year project focuses on implementing the Zebra Optimization Algorithm (ZOA) for optimal capacitor placement and sizing in radial distribution systems. The research aims to minimize power losses and improve voltage profiles in electrical distribution networks.
+                            Completed a comprehensive engineering internship at PUC in Seychelles, rotating through various departments including Inspectorate, Planning, Distribution, Power Station Operation & Maintenance, Underground Cabling Projects, Wind Turbines, and Ile de Romainville Solar Farm, gaining hands-on experience in electrical systems and sustainable energy operations.
                         </p>
                         <div class="project-technologies">
-                            <span class="tech-tag">MATLAB</span>
-                            <span class="tech-tag">Optimization Algorithms</span>
-                            <span class="tech-tag">Power Systems</span>
-                            <span class="tech-tag">ZOA</span>
-                            <span class="tech-tag">Distribution Networks</span>
+                            <span class="tech-tag">Power Generation</span>
+                            <span class="tech-tag">Distribution Systems</span>
+                            <span class="tech-tag">Underground Cabling</span>
+                            <span class="tech-tag">Wind Turbines</span>
+                            <span class="tech-tag">Solar Farm</span>
+                            <span class="tech-tag">Maintenance</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">📊 Presentation</a>
-                            <a href="#" class="project-link secondary">📋 Documentation</a>
+                            <a href="#" class="project-link primary">🔗 View Experience</a>
+                            <a href="#" class="project-link secondary">📄 Report</a>
                         </div>
                     </div>
                 </div>
@@ -606,33 +624,22 @@
         <div class="container">
             <h2 class="section-title">SWOT Analysis</h2>
             <div class="swot-content">
-                <div class="swot-image">
-                    📊
+                <div class="swot-image-container">
+                    <img src="SWOT.jpg" alt="SWOT Analysis Chart" class="swot-image">
                 </div>
                 <div class="swot-text">
-                    <div class="swot-summary">
-                        <p>Through careful self-reflection and feedback from mentors and peers, I have conducted a comprehensive SWOT analysis to better understand my professional profile as an Electrical and Electronic Engineering student. This analysis helps me identify areas where I excel and areas where I can continue to grow and improve.</p>
-                        <p>Understanding my technical strengths allows me to leverage them effectively in engineering projects and teamwork. Recognizing areas for development helps me focus on continuous improvement and skill enhancement in the rapidly evolving engineering field.</p>
-                    </div>
-                    <div class="swot-grid">
-                        <div class="swot-item strengths">
-                            <h4>Strengths</h4>
-                            <p>Strong technical foundation in electrical and electronic engineering with hands-on experience in power systems, renewable energy, and embedded systems. Proven problem-solving skills through ZOA optimization project and smart glasses development. Practical industry exposure from PUC internship.</p>
-                        </div>
-                        <div class="swot-item weaknesses">
-                            <h4>Weaknesses</h4>
-                            <p>Limited exposure to advanced simulation tools beyond MATLAB and Python (e.g., ETAP, PSCAD). Still building professional-level experience in large-scale project management and technical documentation for industry standards. Need further specialization in AI-driven energy systems.</p>
-                        </div>
-                        <div class="swot-item opportunities">
-                            <h4>Opportunities</h4>
-                            <p>Rising demand for renewable energy systems and power optimization solutions aligns with expertise in capacitor placement. Opportunities in smart grid technologies and automation. Growing market for assistive technologies like smart glasses project.</p>
-                        </div>
-                        <div class="swot-item threats">
-                            <h4>Threats</h4>
-                            <p>Rapid technological advancements require continuous upskilling. Highly competitive job market for electrical engineers. Economic fluctuations may impact utilities hiring. AI integration could reduce demand for traditional engineering tasks.</p>
-                        </div>
-                    </div>
+                    <p>Taking a look at my school practice and practical experiences, I realize what I am good at. My top strengths include my high grades and my outstanding technical skills in MATLAB, optimization and embedded systems. I possess practical experience as well through internships and projects and I am a team player and can communicate effectively.</p>
+                    
+                    <p>I do know some also weaknesses that I should to work on. I have to improve my ability to analyze problems and to keep learning independently. I must also learn to tackle problems better when I am under pressure, should study more on my own and learn to write down the work, rather than just concentrate on the technical aspects.</p>
+                    
+                    <p>In the future, I can observe numerous opportunities to develop. My final projects can assist me to secure employment after I graduate. I also get a chance to study online courses so that I can improve on my skills. I might want to specialize in power systems or IoT systems and get to know more people in my industry at industry events, on LinkedIn, and in groups such as IEEE.</p>
+                    
+                    <p>There are also threats that I am noticing that I should be prepared. Technology is something that evolves very fast and I cannot afford not to learn. The new engineers job market is stiff. Without continuous self-education, I can fall behind, and I should be cautious of my time management to be able to complete my work on time, especially in stressful scenarios.</p>
                 </div>
+            </div>
+            <div class="swot-description">
+                <h3>Key Insights from SWOT Analysis</h3>
+                <p>This comprehensive SWOT analysis reflects my journey as an Electrical and Electronics Engineering student, highlighting my technical competencies in power systems, embedded technologies, and optimization algorithms while identifying growth areas in problem analysis and independent learning. The analysis reveals significant opportunities in the evolving fields of renewable energy, smart grids, and IoT systems, balanced against the challenges of rapid technological advancement and competitive job markets. This self-assessment guides my professional development strategy, emphasizing continuous learning, skill enhancement, and strategic career positioning in the electrical engineering field.</p>
             </div>
         </div>
     </section>
@@ -640,7 +647,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
-            <p>I'm always open to discussing new opportunities, collaborations, and interesting projects.</p>
+            <p>I'm always open to discussing new opportunities, collaborations, and interesting engineering projects.</p>
             <div class="contact-links">
                 <a href="mailto:damian.ernesta@example.com" class="contact-link">
                     📧 Email Me
@@ -657,7 +664,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Damian Etienne Ernesta. Built with passion and dedication ❤️</p>
+            <p>&copy; 2025 Damian Etienne Ernesta. Built with passion and dedication for electrical engineering excellence ⚡</p>
         </div>
     </footer>
 
@@ -699,8 +706,8 @@
             });
         }, observerOptions);
 
-        // Observe project cards and SWOT items
-        document.querySelectorAll('.project-card, .swot-item').forEach(card => {
+        // Observe project cards and animated elements
+        document.querySelectorAll('.project-card, .mission-statement, .swot-description').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
