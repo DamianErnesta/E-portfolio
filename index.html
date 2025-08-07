@@ -561,8 +561,7 @@
                             <span class="tech-tag">Optimization</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">📊 View Results</a>
-                            <a href="#" class="project-link secondary">📋 Documentation</a>
+                            <a href="javascript:void(0)" onclick="downloadReport('finalyear.pdf')" class="project-link primary">📄 Report</a>
                         </div>
                     </div>
                 </div>
@@ -584,10 +583,6 @@
                             <span class="tech-tag">GPS Modules</span>
                             <span class="tech-tag">Voice Assistance</span>
                             <span class="tech-tag">Computer Vision</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link primary">🚀 Live Demo</a>
-                            <a href="#" class="project-link secondary">💻 Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -611,8 +606,7 @@
                             <span class="tech-tag">Maintenance</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link primary">🔗 View Experience</a>
-                            <a href="#" class="project-link secondary">📄 Report</a>
+                            <a href="javascript:void(0)" onclick="downloadReport('internship.pdf')" class="project-link primary">📄 Report</a>
                         </div>
                     </div>
                 </div>
@@ -719,6 +713,17 @@
             const link = document.createElement('a');
             link.href = './Damian_Ernesta_CV.pdf';
             link.download = 'Damian_Ernesta_CV.pdf';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Download report function
+        function downloadReport(filename) {
+            const link = document.createElement('a');
+            link.href = './' + filename;
+            link.download = filename;
             link.style.display = 'none';
             document.body.appendChild(link);
             link.click();
